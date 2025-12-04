@@ -1,0 +1,6 @@
+com\webprofilepage\model\Skill.class
+com\webprofilepage\repository\ISkillRepository.class
+com\webprofilepage\webprofilepage\resources\JakartaEE10Resource.class
+com\webprofilepage\webprofilepage\JakartaRestConfiguration.class
+com\webprofilepage\model\Profile.class
+com\webprofilepage\repository\IProfileRepository.class
