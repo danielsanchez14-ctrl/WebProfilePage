@@ -143,7 +143,7 @@ public class ProfileController extends HttpServlet {
             throw new IOException("No se pudo decodificar la imagen: " + filePath);
         }
 
-        // ✅ Corrección clave: usa el tipo correcto según el formato
+        // Corrección clave: usa el tipo correcto según el formato
         int imageType = "png".equals(format) ? BufferedImage.TYPE_INT_ARGB : BufferedImage.TYPE_INT_RGB;
         BufferedImage resizedImage = new BufferedImage(targetWidth, targetHeight, imageType);
 
