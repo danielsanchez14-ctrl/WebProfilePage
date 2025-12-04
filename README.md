@@ -143,5 +143,4 @@ Contiene la lógica de negocio:
 * `ProfileController` → Maneja edición del perfil y fotos
 * `SkillController` → CRUD de habilidades
 
-## Capturas de pantalla
-(Adjunta 2–3 capturas en la carpeta `docs/`)
+## Nota: acceda a la carpeta Technical Documentations para visualizar el diagrama de clases, explicación del flujo MVC y a las pruebas manuales.
