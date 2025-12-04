@@ -1,0 +1,37 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4/12/2025, 6:43:16 p. m.
+    Author     : Usuario
+*/
+/* Estilos personalizados */
+
+.profile-img {
+  width: 180px !important;
+  height: 180px !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50% !important;
+  border: 5px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto -90px auto; /* Centra horizontalmente y sube 90px */
+}
+.profile-container {
+  position: relative;
+  display: inline-block;
+  overflow: visible; /* Evita recortes */
+  margin-top: 90px; /* Compensa el margen negativo de la imagen */
+  margin-bottom: 40px;
+}
+
+.skill-card {
+  transition: transform 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
