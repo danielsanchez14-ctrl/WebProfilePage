@@ -32,6 +32,11 @@ public class ProfileController extends HttpServlet {
 
     private IProfileRepository profileRepo = new ProfileRepositoryMongo();
 
+    /**
+     * Maneja la carga del perfil. Obtiene el perfil y las habilidades y los
+     * envía a profile.jsp. Si se recibe ?resetdb=true, elimina los datos
+     * almacenados y reinicia la aplicación.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -60,6 +65,12 @@ public class ProfileController extends HttpServlet {
         request.getRequestDispatcher("/profile.jsp").forward(request, response);
     }
 
+    /**
+     * Procesa el formulario de edición del perfil. Actualiza nombre, bio,
+     * contacto, experiencia, color del banner y gestiona la subida +
+     * redimensionamiento de la foto de perfil. Guarda los cambios y redirige a
+     * la página principal.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -123,6 +134,13 @@ public class ProfileController extends HttpServlet {
     }
 
     // --- Método auxiliar para redimensionar imagen ---
+    /**
+     * Redimensiona una imagen al tamaño indicado manteniendo su formato.
+     *
+     * @param filePath ruta absoluta del archivo de imagen
+     * @param targetWidth ancho deseado
+     * @param targetHeight alto deseado
+     */
     private void resizeImage(String filePath, int targetWidth, int targetHeight) throws IOException {
         File file = new File(filePath);
         String fileName = file.getName().toLowerCase();
