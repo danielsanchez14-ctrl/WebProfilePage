@@ -103,13 +103,13 @@ En NetBeans:
 ### Abrir la aplicación
 
 ```
-http://localhost:8080/WebProfileApp/
+http://localhost:8080/WebProfilePage/
 ```
 
 Si quieres reiniciar toda la base de datos (si hay problemas):
 
 ```
-http://localhost:8080/WebProfileApp/?resetdb=true
+http://localhost:8080/WebProfilePage/?resetdb=true
 ```
 ---
 
