@@ -143,4 +143,11 @@ Contiene la lógica de negocio:
 * `ProfileController` → Maneja edición del perfil y fotos
 * `SkillController` → CRUD de habilidades
 
-## Nota: acceda a la carpeta Technical Documentations para visualizar el diagrama de clases, explicación del flujo MVC y a las pruebas manuales.
+## Nota: acceda a la carpeta Technical Documentations para visualizar el diagrama de clases, explicación del flujo MVC y las pruebas manuales.
+
+## Integrantes:
+- María Camila Torres Chica
+- Jesica Alejandra Estor Soto
+- Mateo Daniel Galeano Quiñones
+- David Sánchez Arango
+- Daniel Sánchez Escobar
