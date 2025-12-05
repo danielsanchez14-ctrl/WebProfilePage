@@ -8,13 +8,13 @@ import com.webprofilepage.model.Profile;
 import com.webprofilepage.model.Skill;
 import com.webprofilepage.repository.IProfileRepository;
 import com.webprofilepage.repository.ISkillRepository;
+import com.webprofilepage.repository.mongo.ProfileRepositoryMongo;
+import com.webprofilepage.repository.mongo.SkillRepositoryMongo;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import repository.mongo.SkillRepositoryMongo;
-import repository.mongo.ProfileRepositoryMongo;
 
 import java.io.IOException;
 import java.util.List;
