@@ -6,7 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,7 +32,7 @@
         }
     </style>
 
-    <title>Editar Perfil</title>
+    <title>Edit Profile</title>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -40,7 +40,7 @@
     <%-- Navegación superior --%>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="${pageContext.request.contextPath}/">MiPortafolio</a>
+        <a class="navbar-brand fw-bold" href="${pageContext.request.contextPath}/">MyPortfolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,7 +49,7 @@
           <ul class="navbar-nav gap-3">
             <li class="nav-item">
               <%-- Regresar a la vista del perfil --%>
-              <a class="nav-link" href="${pageContext.request.contextPath}/">← Ver Perfil</a>
+              <a class="nav-link" href="${pageContext.request.contextPath}/">← Check Profile</a>
             </li>
           </ul>
         </div>
@@ -77,7 +77,7 @@
         <%-- Formulario principal para actualizar la información del perfil --%>
         <div class="card shadow-sm mb-5">
             <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">Editar Información Personal</h4>
+                <h4 class="mb-0">Edit Personal Information</h4>
             </div>
 
             <div class="card-body">
@@ -92,7 +92,7 @@
                               class="rounded-circle profile-img mb-3"
                               alt="Foto de Perfil"
                             />
-                            <label for="profilePicture" class="form-label">Cambiar foto</label>
+                            <label for="profilePicture" class="form-label">Change image</label>
                             <input type="file" class="form-control form-control-sm" 
                                    id="profilePicture" name="profilePicture" accept="image/*">
                         </div>
@@ -102,39 +102,39 @@
 
                             <%-- Campo de nombre --%>
                             <div class="mb-3">
-                                <label for="name" class="form-label">Nombre</label>
+                                <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" 
                                        name="name" value="${profile.name}">
                             </div>
 
                             <%-- Biografía del usuario --%>
                             <div class="mb-3">
-                                <label for="bio" class="form-label">Biografía</label>
+                                <label for="bio" class="form-label">Biography</label>
                                 <textarea class="form-control" id="bio" name="bio" rows="2">${profile.bio}</textarea>
                             </div>
 
                             <%-- Experiencia profesional --%>
                             <div class="mb-3">
-                                <label for="experience" class="form-label">Experiencia</label>
+                                <label for="experience" class="form-label">Experience</label>
                                 <textarea class="form-control" id="experience" name="experience" rows="2">${profile.experience}</textarea>
                             </div>
 
                             <%-- Contacto del usuario --%>
                             <div class="mb-3">
-                                <label for="contact" class="form-label">Contacto (email)</label>
+                                <label for="contact" class="form-label">Contact (email)</label>
                                 <input type="email" class="form-control" id="contact" 
                                        name="contact" value="${profile.contact}">
                             </div>
 
                             <%-- Color del banner del perfil --%>
                             <div class="mb-3">
-                                <label for="bannerColor" class="form-label">Color del banner</label>
+                                <label for="bannerColor" class="form-label">Banner Color</label>
                                 <input type="color" class="form-control form-control-color"
                                        id="bannerColor" name="bannerColor"
                                        value="${profile.bannerColor}">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Guardar Perfil</button>
+                            <button type="submit" class="btn btn-primary">Save Profile</button>
                         </div>
                     </div>
                 </form>
@@ -144,7 +144,7 @@
         <%-- Formulario para agregar o actualizar habilidades (CRUD) --%>
         <div class="card shadow-sm">
             <div class="card-header bg-success text-white">
-                <h4 class="mb-0">Gestión de Habilidades</h4>
+                <h4 class="mb-0">Skills Management</h4>
             </div>
 
             <div class="card-body">
@@ -162,14 +162,14 @@
 
                     <%-- Nombre de la habilidad --%>
                     <div class="col-md-5">
-                        <label class="form-label">Nombre de la habilidad</label>
+                        <label class="form-label">Skill Name</label>
                         <input type="text" class="form-control" name="name"
                                value="${skillToEdit != null ? skillToEdit.name : ''}" required>
                     </div>
 
                     <%-- Nivel numérico (1–100) --%>
                     <div class="col-md-4">
-                        <label class="form-label">Nivel (1–100)</label>
+                        <label class="form-label">Level (1–100)</label>
                         <input type="number" class="form-control" name="level" min="1" max="100"
                                value="${skillToEdit != null ? skillToEdit.level : '50'}" required>
                     </div>
@@ -178,7 +178,7 @@
                     <div class="col-md-3 d-flex align-items-end">
                         <button type="submit" 
                                 class="btn ${skillToEdit != null ? 'btn-warning' : 'btn-success'} w-100">
-                            ${skillToEdit != null ? 'Actualizar' : 'Agregar'}
+                            ${skillToEdit != null ? 'Update' : 'Add'}
                         </button>
                     </div>
                 </form>
@@ -199,17 +199,17 @@
 
                                         <%-- Botón para editar habilidad --%>
                                         <a href="${pageContext.request.contextPath}/edit?action=edit&id=${skill.id}"
-                                           class="btn btn-sm btn-outline-primary">Editar</a>
+                                           class="btn btn-sm btn-outline-primary">Edit</a>
 
                                         <%-- Botón para eliminar habilidad --%>
                                         <form action="${pageContext.request.contextPath}/edit" method="post"
-                                              onsubmit="return confirm('¿Eliminar esta habilidad?')">
+                                              onsubmit="return confirm('¿Delete this skill?')">
 
                                             <input type="hidden" name="action" value="delete">
                                             <input type="hidden" name="id" value="${skill.id}">
 
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                Borrar
+                                                Delete
                                             </button>
                                         </form>
 
@@ -223,7 +223,7 @@
                     <%-- Vista si no existen habilidades registradas --%>
                     <c:if test="${empty skills}">
                         <div class="col-12 text-center text-muted">
-                            No hay habilidades registradas.
+                           There are not registered skills.
                         </div>
                     </c:if>
 
@@ -236,12 +236,12 @@
     <footer class="bg-dark text-white py-4 mt-auto">
       <div class="container text-center">
         <p class="mb-2">
-          Contacto:
+          Contact:
           <a href="mailto:${profile.contact}" class="text-white text-decoration-underline">
             ${profile.contact}
           </a>
         </p>
-        <small class="text-white-50">&copy; 2025 Mi Perfil Profesional</small>
+        <small class="text-white-50">&copy; 2025 My Professional Profile</small>
       </div>
     </footer>
 
