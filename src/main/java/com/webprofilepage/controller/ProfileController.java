@@ -103,7 +103,12 @@ public class ProfileController extends HttpServlet {
             profile.setExperience(experience.trim());
         }
         if (contact != null && !contact.trim().isEmpty()) {
-            profile.setContact(contact.trim());
+            String pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+            if (!contact.matches(pattern)) {
+            } else {
+                profile.setContact(contact.trim());
+            }
+
         }
 
         // Subir foto de perfil
