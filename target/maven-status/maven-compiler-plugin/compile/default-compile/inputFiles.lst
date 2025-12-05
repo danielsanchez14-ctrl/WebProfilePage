@@ -1,6 +1,11 @@
 C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\repository\IProfileRepository.java
+C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\repository\mongo\ProfileRepositoryMongo.java
+C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\Utils\MongoDBConnection.java
 C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\model\Profile.java
 C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\model\Skill.java
 C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\webprofilepage\resources\JakartaEE10Resource.java
 C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\webprofilepage\JakartaRestConfiguration.java
 C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\repository\ISkillRepository.java
+C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\controller\SkillController.java
+C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\controller\ProfileController.java
+C:\Users\kosmo\Documents\NetBeansProjects\WebProfilePage\src\main\java\com\webprofilepage\repository\mongo\SkillRepositoryMongo.java

@@ -1,6 +1,11 @@
+com\webprofilepage\controller\ProfileController.class
 com\webprofilepage\model\Skill.class
 com\webprofilepage\repository\ISkillRepository.class
+com\webprofilepage\repository\mongo\SkillRepositoryMongo.class
 com\webprofilepage\webprofilepage\resources\JakartaEE10Resource.class
+com\webprofilepage\repository\mongo\ProfileRepositoryMongo.class
+com\webprofilepage\controller\SkillController.class
 com\webprofilepage\webprofilepage\JakartaRestConfiguration.class
+utils\MongoDBConnection.class
 com\webprofilepage\model\Profile.class
 com\webprofilepage\repository\IProfileRepository.class
