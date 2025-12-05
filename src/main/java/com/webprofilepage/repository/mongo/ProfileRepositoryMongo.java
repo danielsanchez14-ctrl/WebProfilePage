@@ -11,15 +11,17 @@ import utils.MongoDBConnection;
  * Implementación del repositorio de perfiles usando MongoDB.
  * <p>
  * Esta clase gestiona un único documento de perfil dentro de la colección
- * <strong>profile</strong>. Si no existe, genera uno por defecto.
- * También permite guardar, eliminar o restablecer el perfil.
+ * <strong>profile</strong>. Si no existe, genera uno por defecto. También
+ * permite guardar, eliminar o restablecer el perfil.
  * </p>
  *
  * @author camil
  */
 public class ProfileRepositoryMongo implements IProfileRepository {
 
-    /** Colección MongoDB donde se almacena el perfil. */
+    /**
+     * Colección MongoDB donde se almacena el perfil.
+     */
     private final MongoCollection<Document> collection;
 
     /**
@@ -30,8 +32,8 @@ public class ProfileRepositoryMongo implements IProfileRepository {
     }
 
     /**
-     * Obtiene el único perfil almacenado.  
-     * Si no existe, crea uno con valores por defecto y lo retorna.
+     * Obtiene el único perfil almacenado. Si no existe, crea uno con valores
+     * por defecto y lo retorna.
      *
      * @return el perfil almacenado o uno nuevo si no existía
      */
@@ -40,9 +42,13 @@ public class ProfileRepositoryMongo implements IProfileRepository {
         Document doc = collection.find().first();
         if (doc == null) {
             Profile defaultProfile = new Profile(
-                    "Programador Web",
-                    "Biografía por defecto",
-                    "Experiencia por defecto",
+                    "Jesica Estor Soto",
+                    "Soy Jesica Alejandra Estor, desarrolladora web enfocada en crear soluciones modernas, eficientes y atractivas. Me apasiona el diseño limpio, el buen rendimiento y la construcción de experiencias digitales que realmente aporten valor. Disfruto aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.",
+                    "Desarrolladora Web Frontend — Freelance (2022 – Actualidad)\n"
+                    + "He participado en proyectos de creación de landing pages, dashboards interactivos y aplicaciones web responsivas. Mi trabajo se centra en la implementación de interfaces dinámicas, optimización de rendimiento y buenas prácticas de accesibilidad.\n"
+                    + "\n"
+                    + "Asistente de Desarrollo — Startup Local (2021 – 2022)\n"
+                    + "Colaboré en la creación de módulos internos, maquetación de interfaces y soporte en la integración con APIs.",
                     "contacto@ejemplo.com",
                     "default.png",
                     "banner.jpeg"
@@ -54,8 +60,8 @@ public class ProfileRepositoryMongo implements IProfileRepository {
     }
 
     /**
-     * Guarda o reemplaza el perfil actual usando operación upsert.
-     * Solo se mantiene un documento en la colección.
+     * Guarda o reemplaza el perfil actual usando operación upsert. Solo se
+     * mantiene un documento en la colección.
      *
      * @param profile perfil a almacenar
      */
@@ -66,10 +72,9 @@ public class ProfileRepositoryMongo implements IProfileRepository {
     }
 
     // --- Métodos auxiliares ---
-
     /**
-     * Convierte un documento MongoDB en un objeto {@link Profile}.
-     * Aplica valores por defecto cuando faltan campos.
+     * Convierte un documento MongoDB en un objeto {@link Profile}. Aplica
+     * valores por defecto cuando faltan campos.
      *
      * @param doc documento obtenido de MongoDB
      * @return objeto Profile con valores válidos
@@ -108,8 +113,8 @@ public class ProfileRepositoryMongo implements IProfileRepository {
     }
 
     /**
-     * Elimina todos los documentos de la colección de perfiles.
-     * Solo debe existir uno, pero se borra por seguridad.
+     * Elimina todos los documentos de la colección de perfiles. Solo debe
+     * existir uno, pero se borra por seguridad.
      */
     @Override
     public void deleteProfile() {
@@ -124,9 +129,13 @@ public class ProfileRepositoryMongo implements IProfileRepository {
         collection.deleteMany(new Document());
 
         Profile defaultProfile = new Profile(
-                "Programador Web",
-                "Biografía por defecto",
-                "Experiencia por defecto",
+                "Jesica Estor Soto",
+                "Soy Jesica Alejandra Estor, desarrolladora web enfocada en crear soluciones modernas, eficientes y atractivas. Me apasiona el diseño limpio, el buen rendimiento y la construcción de experiencias digitales que realmente aporten valor. Disfruto aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.",
+                "Desarrolladora Web Frontend — Freelance (2022 – Actualidad)\n"
+                + "He participado en proyectos de creación de landing pages, dashboards interactivos y aplicaciones web responsivas. Mi trabajo se centra en la implementación de interfaces dinámicas, optimización de rendimiento y buenas prácticas de accesibilidad.\n"
+                + "\n"
+                + "Asistente de Desarrollo — Startup Local (2021 – 2022)\n"
+                + "Colaboré en la creación de módulos internos, maquetación de interfaces y soporte en la integración con APIs.",
                 "contacto@ejemplo.com",
                 "default.png",
                 "#4A90E2"
