@@ -88,7 +88,7 @@
                         <%-- Vista previa de la foto + input para cambiarla --%>
                         <div class="col-md-4 text-center mb-4">
                             <img
-                              src="${pageContext.request.contextPath}/uploads/${empty profile.profilePicture ? 'default.jpg' : profile.profilePicture}"
+                              src="${pageContext.request.contextPath}/uploads/${empty profile.profilePicture ? 'default.png' : profile.profilePicture}"
                               class="rounded-circle profile-img mb-3"
                               alt="Foto de Perfil"
                             />
