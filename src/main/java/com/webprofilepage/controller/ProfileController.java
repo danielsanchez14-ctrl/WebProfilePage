@@ -4,8 +4,12 @@
  */
 package com.webprofilepage.controller;
 
+import com.mongodb.client.MongoCollection;
 import com.webprofilepage.model.Profile;
 import com.webprofilepage.model.Skill;
+import com.webprofilepage.repository.IProfileRepository;
+import com.webprofilepage.repository.mongo.ProfileRepositoryMongo;
+import com.webprofilepage.repository.mongo.SkillRepositoryMongo;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -21,6 +25,8 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
 import javax.imageio.ImageIO;
+import org.bson.Document;
+import utils.MongoDBConnection;
 
 /**
  *
@@ -33,9 +39,12 @@ public class ProfileController extends HttpServlet {
     private IProfileRepository profileRepo = new ProfileRepositoryMongo();
 
     /**
-     * Maneja la carga del perfil. Obtiene el perfil y las habilidades y los
-     * envía a profile.jsp. Si se recibe ?resetdb=true, elimina los datos
+     * Maneja la carga del perfil.Obtiene el perfil y las habilidades y los
+     * envía a profile.jsp.Si se recibe ?resetdb=true, elimina los datos
      * almacenados y reinicia la aplicación.
+     *
+     * @param request
+     * @param response
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -66,10 +75,13 @@ public class ProfileController extends HttpServlet {
     }
 
     /**
-     * Procesa el formulario de edición del perfil. Actualiza nombre, bio,
+     * Procesa el formulario de edición del perfil.Actualiza nombre, bio,
      * contacto, experiencia, color del banner y gestiona la subida +
-     * redimensionamiento de la foto de perfil. Guarda los cambios y redirige a
+     * redimensionamiento de la foto de perfil.Guarda los cambios y redirige a
      * la página principal.
+     *
+     * @param request
+     * @param response
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -91,7 +103,12 @@ public class ProfileController extends HttpServlet {
             profile.setExperience(experience.trim());
         }
         if (contact != null && !contact.trim().isEmpty()) {
-            profile.setContact(contact.trim());
+            String pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+            if (!contact.matches(pattern)) {
+            } else {
+                profile.setContact(contact.trim());
+            }
+
         }
 
         // Subir foto de perfil
