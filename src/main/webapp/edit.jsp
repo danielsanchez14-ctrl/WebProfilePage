@@ -122,7 +122,7 @@
                             <%-- Contacto del usuario --%>
                             <div class="mb-3">
                                 <label for="contact" class="form-label">Contacto (email)</label>
-                                <input type="text" class="form-control" id="contact" 
+                                <input type="email" class="form-control" id="contact" 
                                        name="contact" value="${profile.contact}">
                             </div>
 
